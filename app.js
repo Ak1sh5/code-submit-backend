@@ -25,6 +25,11 @@ connection.connect((err) => {
     }
     console.log('Connected to MySQL database');
 });
+app.use(function (request, response, next) {
+    response.header("Access-Control-Allow-Origin", "*");
+    response.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+    next();
+});
 
 // Middleware to parse JSON bodies
 app.use(bodyParser.json());
