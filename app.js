@@ -35,6 +35,7 @@ app.use(function (request, response, next) {
 app.use(bodyParser.json());
 app.get('/', (req, res) => {
     console.log("Hi");
+    res.send('Hi welcome to backend code display.Hit end point /submissions to see the data fetch from sql.Hit end point .');
 });
 // Route to handle form submissions
 app.post('/submit', (req, res) => {
